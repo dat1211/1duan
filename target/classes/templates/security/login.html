@@ -1,0 +1,65 @@
+<div  xmlns:th="http://www.thymeleaf.org" >
+   <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HV Store</title>
+
+    <!-- Latest compiled and minified CSS -->
+
+</head>
+<style>
+
+ body {
+
+   background-image: url("/assets/images/Sign-up/bg_comingsoon.jpg");
+
+   background-repeat: no-repeat;
+
+   background-size: cover;
+
+ }
+
+</style>
+   <link rel="stylesheet" href="/assets/css/Signup.css">
+<main>
+<form th:action="@{/security/login}" method ="post" class="col-sm-8 col-sm-offset-2">
+ <div class="main_div">
+    <div class="title">Login Form</div>
+    <div class="social_icons">
+      <a href="#"><i class="fab fa-facebook-f"></i> <span>Facebook</span></a>
+      <a href="#"><i class="fab fa-twitter"></i><span>Twitter</span></a>
+    </div>
+    <form action="#">
+      <div class="input_box">
+        <input name="username" type="text" placeholder="Email or Phone" required>
+        <div class="icon"><i class="fas fa-user"></i></div>
+      </div>
+      <div class="input_box">
+        <input  name="password" type="password" placeholder="Password" required>
+        <div class="icon"><i class="fas fa-lock"></i></div>
+      </div>
+      <div class="option_div">
+        <div class="check_box">
+          <input type="checkbox">
+          <span>Remember me</span>
+        </div>
+        <div class="forget_div">
+          <a href="/Registration.html">Forgot password?</a>
+        </div>
+      </div>
+      <div class="input_box button">
+      <i class="pull-left text-danger" th:text="${message}"></i>
+        <input th:href="@{/security/login/form}" type="submit" value="Login">
+      </div>
+            </a>
+      
+      <div class="sign_up">
+        Not a member? <a th:href="@{/security/signup}">Signup now</a>
+      </div>
+    </form>
+  </div>
+</form>
+</main>
+
+</div>

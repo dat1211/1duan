@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/layout/index :: dynamic(~{::main})}">
+
+<main>
+
+	<style type="text/css">
+.slider1 {
+	background-color: #fff;
+	width: 65%;
+	margin: 10px auto;
+	text-align: center;
+}
+
+.slick-slide {
+	margin: 0px 20px;
+}
+
+.slick-slide img {
+	width: 100%;
+}
+
+.slick-prev:before, .slick-next:before {
+	color: black;
+}
+
+.slick-slide {
+	transition: all ease-in-out .3s;
+	opacity: .2;
+}
+
+.slick-active {
+	opacity: 1;
+}
+</style>
+	<!------ Include the above in your HEAD tag ---------->
+	<div class="prd1-cont container-fluid">
+		<div class="slideshow-container">
+			<div class="mySlides">
+				<img
+					src="https://www.dior.com/couture/var/dior/storage/images/horizon/mens-fashion/folder-campaign/winter-2020-2021-men%E2%80%99s-campaign/cover-visuel-texte-3/20808980-1-fre-FR/cover-visuel-texte-3_1440_1200.jpg"
+					style="width: 100%">
+			</div>
+			<div class="mySlides">
+				<img
+					src="https://www.dior.com/couture/var/dior/storage/images/25781021/9-int-EN/cdc-homme-spring-2022-collection62_1440_1200.jpg"
+					style="width: 100%">
+			</div>
+			<div class="mySlides">
+				<img
+					src="https://www.dior.com/couture/var/dior/storage/images/27943467/4-eng-GB/cover2_1440_1200.jpg"
+					style="width: 100%">
+			</div>
+			<div class="mySlides">
+				<img
+					src="https://www.dior.com/couture/var/dior/storage/images/23092127/17-eng-GB/cover5_1440_1200.jpg"
+					style="width: 100%">
+			</div>
+		</div>
+		<br>
+		<div>
+			<span class="dot"></span> <span class="dot"></span> <span class="dot"></span>
+			<span class="dot"></span>
+		</div>
+	</div>
+	<br>
+	<div class="slidersp">
+	<h1 class="saleoff">SALE OFF</h1>
+	<br>
+		<section class="regular slider1">
+
+			<div>
+				<img
+					src="https://ananas.vn/wp-content/uploads/pro_vintas_A61043_1-500x500.jpg">
+					<div class="caption">
+					<h3>
+						<a class="name" href="https://ananas.vn/product-detail/abc100/" tabindex="0">Baseball
+							Cap - Be Positive</a>
+					</h3>
+					<h3 class="color">Pink</h3>
+					<h3 class="price">
+						137.500 VND <span class="price-real">275.000 VND</span>
+					</h3>
+				</div>
+			</div>
+			<div>
+				<img
+					src="https://ananas.vn/wp-content/uploads/stu_basas_A61024_1-500x500.jpg">
+					<div class="caption">
+					<h3>
+						<a class="name" href="https://ananas.vn/product-detail/abc100/" tabindex="0">Baseball
+							Cap - Be Positive</a>
+					</h3>
+					<h3 class="color">Pink</h3>
+					<h3 class="price">
+						137.500 VND <span class="price-real">275.000 VND</span>
+					</h3>
+				</div>
+			</div>
+			<div>
+				<img
+					src="https://ananas.vn/wp-content/uploads/pro_ABC100_1-500x500.jpg">
+				<div class="caption">
+					<h3>
+						<a class="name" href="https://ananas.vn/product-detail/abc100/" tabindex="0">Baseball
+							Cap - Be Positive</a>
+					</h3>
+					<h3 class="color">Pink</h3>
+					<h3 class="price">
+						137.500 VND <span class="price-real">275.000 VND</span>
+					</h3>
+				</div>
+			</div>
+			<div>
+				<img
+					src="https://ananas.vn/wp-content/uploads/stu_basas_A61003_1-500x500.jpg">
+					<div class="caption">
+					<h3>
+						<a class="name" href="https://ananas.vn/product-detail/abc100/" tabindex="0">Baseball
+							Cap - Be Positive</a>
+					</h3>
+					<h3 class="color">Pink</h3>
+					<h3 class="price">
+						137.500 VND <span class="price-real">275.000 VND</span>
+					</h3>
+				</div>
+			</div>
+			<div>
+				<img
+					src="https://ananas.vn/wp-content/uploads/pro_A61095_1-500x500.jpg">
+					<div class="caption">
+					<h3>
+						<a class="name" href="https://ananas.vn/product-detail/abc100/" tabindex="0">Baseball
+							Cap - Be Positive</a>
+					</h3>
+					<h3 class="color">Pink</h3>
+					<h3 class="price">
+						137.500 VND <span class="price-real">275.000 VND</span>
+					</h3>
+				</div>
+			</div>
+			<div>
+				<img
+					src="https://ananas.vn/wp-content/uploads/stu_basas_A61003_1-500x500.jpg">
+					<div class="caption">
+					<h3>
+						<a class="name" href="https://ananas.vn/product-detail/abc100/" tabindex="0">Baseball
+							Cap - Be Positive</a>
+					</h3>
+					<h3 class="color">Pink</h3>
+					<h3 class="price">
+						137.500 VND <span class="price-real">275.000 VND</span>
+					</h3>
+				</div>
+			</div>
+		</section>
+	</div>
+
+
+	<script type="text/javascript">
+		var slideIndex = 0;
+		showSlides();
+
+		function showSlides() {
+			var i;
+			var slides = document.getElementsByClassName("mySlides");
+			var dots = document.getElementsByClassName("dot");
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";
+			}
+			slideIndex++;
+			if (slideIndex > slides.length) {
+				slideIndex = 1
+			}
+			for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" active", "");
+			}
+			slides[slideIndex - 1].style.display = "block";
+			dots[slideIndex - 1].className += " active";
+			setTimeout(showSlides, 3000); // Chuyển ảnh sau 2 giây
+		}
+
+		$(document).on('ready', function() {
+
+			$(".regular").slick({
+				dots : true,
+				infinite : true,
+				slidesToShow : 4,
+				slidesToScroll : 3
+			});
+		});
+	</script>
+	<main>
+		<hr>
+</html>

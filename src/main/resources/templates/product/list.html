@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/layout/index :: dynamic(~{::main})}">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/product.css">
+<!-- Boxicons CDN Link -->
+
+<body>
+	<main class="row">
+		<div class="product">
+			<aside class="col-sm-3">
+				<div th:replace="/layout/_category.html"></div>
+			</aside>
+			<article class="col-sm-9">
+				<img alt=""
+					src="https://a.ipricegroup.com/trends-article/top-3-mau-giay-converse-duoc-cac-ngoi-sao-quoc-te-ua-chuong-medium.jpg"
+					width="980px">
+				<div th:each="p: ${items}"
+					class="col-xs-6 col-sm-6 col-md-4 col-lg-4 item">
+					<div class="thumbnail">
+						<div class="cont-item">
+							<div id="bellLogo" onmouseover="hvr(this, 'in')"
+								onmouseleave="hvr(this, 'out')">
+								<div col="g">
+									<img
+										src="https://ananas.vn/wp-content/uploads/pro_AV00114_1-500x500.jpg"
+										class=bell width="100%">
+									<div>
+										<a class="btn btn-prd1-buynow1"></a>
+									</div>
+								</div>
+								<div col="b" style="display: none">
+									<img
+										src="https://ananas.vn/wp-content/uploads/pro_AV00114_2-500x500.jpg"
+										class=bell width="100%">
+									<div class="button">
+										<a class="btn btn-prd1-buynow hidden-xs hidden-sm"
+											th:href="@{|/product/detail/${p.id}|}">MUA NGAY</a> <a
+											th:attr="ng-click=@{|cart.add(${p.id})|}" class="iconaddcart"><span
+											class="iconify" data-icon="bx:bx-shopping-bag"
+											data-width="30" data-height="25"></span></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="caption">
+							<h3 class="type">New Arrival</h3>
+							<h3 class="divider"></h3>
+							<h3 class="name">
+								<a class="name" th:utext="${p.name}"></a>
+							</h3>
+							<h3 th:href="@{|/product/detail/${p.id}|}" class="color">Offwhite/Gum</h3>
+							<h3 class="price">$[[${p.price}]]</h3>
+						</div>
+					</div>
+				</div>
+			</article>
+		</div>
+		<!-- <img th:src="@{|/assets/images/${p.image}|}"> -->
+
+
+		<script>
+   let circle = document.querySelector(".color-option");
+
+   circle.addEventListener("click", (e)=>{
+     let target = e.target;
+     if(target.classList.contains("circle")){
+       circle.querySelector(".active").classList.remove("active");
+       target.classList.add("active");
+       document.querySelector(".main-images .active").classList.remove("active");
+       document.querySelector(`.main-images .${target.id}`).classList.add("active");
+     }
+   });
+   
+   //Hover anh san pham product
+   function hvr(dom, action)
+   {
+       if (action == 'in')
+       {
+           $(dom).find("[col=g]").css("display", "none");
+           $(dom).find("[col=b]").css("display", "inline-block");
+       }
+    
+       else
+       {
+           $(dom).find("[col=b]").css("display", "none");
+           $(dom).find("[col=g]").css("display", "inline-block");
+       }
+   }
+  </script>
+
+	</main>
+
+
+
+
+
+</body>
+</html>

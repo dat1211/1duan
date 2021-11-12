@@ -1,0 +1,219 @@
+<div xmlns:th="'http://www.thymeleaf.org">
+	<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css'
+		zrel='stylesheet'>
+	<link rel="stylesheet" href="/assets/css/Header.css">
+	<link rel="stylesheet" href="/assets/css/Footer.css">
+	<script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+	<nav>
+
+		<div class="header-container">
+			<div class="row">
+				<ul class="menu">
+					<li><a th:href="@{/checkmap/map}"> <img
+							src="/assets/images/icon_tim_cua_hang.svg"> Search Shop
+					</a></li>
+					<th:block th:if="${#request.remoteUser}">
+						<li
+							th:if="${#request.isUserInRole('DIRE') or #request.isUserInRole('STAF')}">
+							<a th:href="@{/admin/home/index}"> <img
+								src="/assets/images/icon_tra_cuu_don_hang.svg">
+								Administration
+						</a>
+						</li>
+						<li><a th:href="@{/security/logoff}"> <img
+								src="/assets/images/icon_dang_nhap.svg"> Sign Out
+						</a></li>
+						<li><a th:href="@{/order/list}"> <img
+								src="/assets/images/icon_heart_header.svg"> Your Orders
+						</a></li>
+					</th:block>
+
+					<th:block th:unless="${#request.remoteUser}">
+						<li><a th:href="@{/security/login/form}"> <img
+								src="/assets/images/icon_dang_nhap.svg"> Sign In
+						</a></li>
+					</th:block>
+					<li><a th:href="@{/cart/view}"> <img
+							src="/assets/images/icon_gio_hang.svg"> Cart
+							({{cart.count}})
+					</a> <!-- <span class="countProduct">0</span> --></li>
+				</ul>
+			</div>
+
+		</div>
+
+
+
+
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	</nav>
+
+
+	<nav1>
+	<div class="icon col-md-2">
+		<a href=""><img
+			src="/assets/images/Screenshot 2021-05-19 223539.png" alt=""
+			width="180px"></a>
+	</div>
+	<div class="wrapper">
+
+
+		<ul class="nav-links">
+
+			<label for="close-btn" class="btn close-btn"><i
+				class="fas fa-times"></i></label>
+			<li class="line"><a th:href="@{/}">Home</a></li>
+			<li class="line"><a th:href="@{/product/list}">Product</a></li>
+			<li class="line"><a th:href="@{/product/list}"
+				class="desktop-item">Men</a><i
+				class='bx bxs-chevron-down htmlcss-arrow arrow '></i>
+
+
+				<div class="mega-box">
+					<div class="content">
+						<div class="row">
+							<img
+								src="https://cf.shopee.vn/file/d4e4021736f5d86cac19338e99f93451"
+								alt="">
+						</div>
+						<div class="row">
+							<header>Mens shirt</header>
+							<ul class="mega-links">
+								<li><a href="#">Shirt</a></li>
+								<li><a href="#">T-shirt</a></li>
+								<li><a href="#">Polo shirt</a></li>
+								<li><a href="#">Coat</a></li>
+
+							</ul>
+						</div>
+						<div class="row">
+							<header>Male pants</header>
+							<ul class="mega-links">
+								<li><a href="#">Jeans</a></li>
+
+								<li><a href="#">Kaki pant</a></li>
+								<li><a href="#">Jogger p</a></li>
+								<li><a href="#">Short</a></li>
+
+							</ul>
+						</div>
+
+						<div class="row">
+							<header>Accessory</header>
+							<ul class="mega-links">
+								<li><a href="/product/list?cid=1006">Hat</a></li>
+								<li><a href="/product/list?cid=1007">Handbag</a></li>
+
+								<li><a href="/product/list?cid=1000">Clock</a></li>
+								<li><a href="#">Shoes</a></li>
+
+							</ul>
+						</div>
+					</div>
+				</div></li>
+			<li class="line"><a th:href="@{/product/list}"
+				class="desktop-item">Woman</a> <i
+				class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+
+
+				<div class="mega-box">
+					<div class="content">
+						<div class="row">
+							<img
+								src="https://cf.shopee.vn/file/759fac1b36672875d0437abe3d16030e_tn"
+								alt="">
+						</div>
+						<div class="row">
+							<header>Design Services</header>
+							<ul class="mega-links">
+								<li><a href="#">Graphics</a></li>
+								<li><a href="#">Vectors</a></li>
+								<li><a href="#">Business cards</a></li>
+								<li><a href="#">Custom logo</a></li>
+							</ul>
+						</div>
+						<div class="row">
+							<header>Email Services</header>
+							<ul class="mega-links">
+								<li><a href="#">Personal Email</a></li>
+								<li><a href="#">Business Email</a></li>
+								<li><a href="#">Mobile Email</a></li>
+								<li><a href="#">Web Marketing</a></li>
+							</ul>
+						</div>
+						<div class="row">
+							<header>Security services</header>
+							<ul class="mega-links">
+								<li><a href="#">Site Seal</a></li>
+								<li><a href="#">VPS Hosting</a></li>
+								<li><a href="#">Privacy Seal</a></li>
+								<li><a href="#">Website design</a></li>
+							</ul>
+						</div>
+					</div>
+				</div></li>
+			<li class="line"><a href="">SALE OFF</a></li>
+			<li class="line"><a href=""><img
+					src="/assets/images/DiscoverYOU.svg" alt=""></a></li>
+
+		</ul>
+		<div class="search ">
+			<input class="srch" type="search" name="" placeholder="Tìm kiếm">
+			<span class="iconify" data-icon="bx:bx-search" data-width="30"
+				data-height="20"></span>
+		</div>
+	</div>
+	<div class="bot">
+		<div class="lazy slider" data-sizes="50vw">
+			<div>
+				<h4>FREE SHIPPING WITH INVOICE FROM 30$!</h4>
+			</div>
+			<div>
+				<h4>BUY MORE LOW PAY - APPLY WHEN BUYING ACCESSORIES</h4>
+			</div>
+			<div>
+				<h4>BUY 2 GET 10% - APPLY ALL</h4>
+			</div>
+
+		</div>
+	</div>
+	</nav1>
+	<style type="text/css">
+.bot {
+	background-color: #f1f1f1;
+}
+
+.slider {
+	background-color: #f1f1f1;
+	width: 50%;
+	margin: 10px auto;
+	text-align: center;
+}
+
+.slick-slide {
+	margin: 0px 20px;
+}
+
+.slick-prev:before, .slick-next:before {
+	color: black;
+}
+</style>
+	<script src="https://code.jquery.com/jquery-2.2.0.min.js"
+		type="text/javascript"></script>
+	<script src="/assets/js/slick.js" type="text/javascript"
+		charset="utf-8"></script>
+		
+	<script type="text/javascript">
+		$(document).on('ready', function() {
+
+			$(".lazy").slick({
+				lazyLoad : 'ondemand', // ondemand progressive anticipated
+				infinite : true
+			});
+		});
+	</script>
+	<link rel="stylesheet" type="text/css" href="/assets/css/slick.css">
+	<link rel="stylesheet" type="text/css"
+		href="/assets/css/slick-theme.css">
+</div>
